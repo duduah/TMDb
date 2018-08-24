@@ -7,24 +7,18 @@
 //
 
 import UIKit
-import TMDbCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var coreAssembly: CoreAssembly?
-    let window = UIWindow(frame: UIScreen.main.bounds)
-
-
+    let appAssembly = AppAssembly()
+    
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		
-        let navigationController = UINavigationController()
-        coreAssembly = CoreAssembly(navigationController: navigationController)
-        
-        // TODO: create FeaturedViewController
-        
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+        let initialViewController = appAssembly.coreAssembly.featuredAssembly.viewController()
+        appAssembly.rootViewController.pushViewController(initialViewController, animated: false)
+        appAssembly.window.rootViewController = appAssembly.rootViewController
+        appAssembly.window.makeKeyAndVisible()
         
 		return true
 	}
