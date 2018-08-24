@@ -11,6 +11,15 @@ import TMDbCore
 
 final class AppAssembly {
     private(set) lazy var window = UIWindow(frame: UIScreen.main.bounds)
-    private(set) lazy var rootViewController = UINavigationController()
-    private(set) lazy var coreAssembly = CoreAssembly(navigationController: rootViewController)
+    private lazy var rootViewController = UINavigationController()
+    private lazy var coreAssembly = CoreAssembly(navigationController: rootViewController)
+    
+    func setupRootViewController() {
+
+        let initialViewController = coreAssembly.featuredAssembly.viewController()
+        rootViewController.pushViewController(initialViewController,
+                                              animated: false)
+        window.rootViewController = rootViewController
+    }
 }
+
