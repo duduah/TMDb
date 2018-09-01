@@ -84,6 +84,8 @@
 		99B9E71F2080BF4D001DD8C8 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B9E71E2080BF4D001DD8C8 /* SearchResult.swift */; };
 		99B9E7282080C177001DD8C8 /* SearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B9E7272080C177001DD8C8 /* SearchAssembly.swift */; };
 		B30F8AAE2130666000E5F8CE /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F8AAD2130666000E5F8CE /* AppAssembly.swift */; };
+		B30F8AB22139B42700E5F8CE /* DetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F8AB12139B42700E5F8CE /* DetailNavigator.swift */; };
+		B30F8AB42139B59100E5F8CE /* PushDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F8AB32139B59100E5F8CE /* PushDetailNavigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -212,6 +214,8 @@
 		99B9E71E2080BF4D001DD8C8 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		99B9E7272080C177001DD8C8 /* SearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAssembly.swift; sourceTree = "<group>"; };
 		B30F8AAD2130666000E5F8CE /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		B30F8AB12139B42700E5F8CE /* DetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigator.swift; sourceTree = "<group>"; };
+		B30F8AB32139B59100E5F8CE /* PushDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDetailNavigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +313,7 @@
 		993D56482080DC5C00FB9F85 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				B30F8AB02139B3F700E5F8CE /* Navigation */,
 				993D566B2080E10F00FB9F85 /* DI */,
 				993D56662080DE1F00FB9F85 /* Domain */,
 				993D56492080DD2100FB9F85 /* Presentation */,
@@ -510,6 +515,15 @@
 				99B8DA7C2080D35B00D07287 /* SearchViewController.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B30F8AB02139B3F700E5F8CE /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B30F8AB12139B42700E5F8CE /* DetailNavigator.swift */,
+				B30F8AB32139B59100E5F8CE /* PushDetailNavigator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -731,6 +745,7 @@
 				99B8DA832080D3CE00D07287 /* Movie.swift in Sources */,
 				99B8DA7B2080D34100D07287 /* SearchResultCell.swift in Sources */,
 				99B8DA7D2080D35B00D07287 /* SearchViewController.swift in Sources */,
+				B30F8AB42139B59100E5F8CE /* PushDetailNavigator.swift in Sources */,
 				99B8DA822080D3CE00D07287 /* Show.swift in Sources */,
 				993D56592080DDFA00FB9F85 /* PosterStripCell.swift in Sources */,
 				9901C11E2080ABA300714957 /* WebService.swift in Sources */,
@@ -752,6 +767,7 @@
 				99B9E7282080C177001DD8C8 /* SearchAssembly.swift in Sources */,
 				993D56652080DDFA00FB9F85 /* DetailViewController.swift in Sources */,
 				99B8DA942080D80400D07287 /* FeaturedAssembly.swift in Sources */,
+				B30F8AB22139B42700E5F8CE /* DetailNavigator.swift in Sources */,
 				99B9E7142080BE4C001DD8C8 /* NibLoadableView.swift in Sources */,
 				993D56612080DDFA00FB9F85 /* PosterStripView.swift in Sources */,
 				9901C1212080AC9100714957 /* DateFormatter+Utils.swift in Sources */,

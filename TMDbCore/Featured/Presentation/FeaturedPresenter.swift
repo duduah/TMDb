@@ -27,11 +27,11 @@ final class FeaturedPresenter {
 	}
 
 	func didSelect(show: Show) {
-		// TODO: implement
+        detailNavigator.navigateToShow(withIdentifier: show.identifier)
 	}
 
 	func didSelect(movie: Movie) {
-		// TODO: implement
+        detailNavigator.navigateToMovie(withIdentifier: movie.identifier)
 	}
 }
 
