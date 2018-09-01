@@ -9,9 +9,14 @@
 import Foundation
 
 final class DetailAssembly {
+    private let navigationController: UINavigationController
 	private let imageLoadingAssembly: ImageLoadingAssembly
+    private(set) lazy var pushDetailNavigator = PushDetailNavigator(navigationController: navigationController,
+                                                                    detailViewControllerProvider: self)
 
-	init(imageLoadingAssembly: ImageLoadingAssembly) {
+	init(navigationController: UINavigationController,
+         imageLoadingAssembly: ImageLoadingAssembly) {
+        self.navigationController = navigationController
 		self.imageLoadingAssembly = imageLoadingAssembly
 	}
 
@@ -22,4 +27,16 @@ final class DetailAssembly {
 	func posterStripPresenter() -> PosterStripPresenter {
 		return PosterStripPresenter(imageRepository: imageLoadingAssembly.imageRepository)
 	}
+}
+
+extension DetailAssembly: DetailViewControllerProvider {
+    func movieViewController(withIdentifier identifier: Int64) -> UIViewController {
+        // TODO: implement
+    }
+    
+    func showViewController(withIdentifier identifier: Int64) -> UIViewController {
+        // TODO: implement
+    }
+    
+    
 }

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-protocol DetailViewControllerProvider {
+protocol DetailViewControllerProvider: class {
     func movieViewController(withIdentifier identifier: Int64) -> UIViewController
     func showViewController(withIdentifier identifier: Int64) -> UIViewController
 }

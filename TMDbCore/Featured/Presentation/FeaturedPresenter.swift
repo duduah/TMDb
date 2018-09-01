@@ -18,6 +18,11 @@ protocol FeaturedView: class {
 
 final class FeaturedPresenter {
 	weak var view: FeaturedView?
+    private let detailNavigator: DetailNavigator
+    
+    init(detailNavigator: DetailNavigator) {
+        self.detailNavigator = detailNavigator
+    }
 
 	func didLoad() {
 		view?.setShowsHeaderTitle(NSLocalizedString("ON TV", comment: ""))
