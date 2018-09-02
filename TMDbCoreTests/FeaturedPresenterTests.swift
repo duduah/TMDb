@@ -46,4 +46,21 @@ class FeaturedPresenterTests: XCTestCase {
         XCTAssertEqual(detailNavigatorMock.navigateToShowCalls.count, 1)
         XCTAssertEqual(detailNavigatorMock.navigateToShowCalls.first, show.identifier)
     }
+    
+    func testMovie_didSelectMovie_navigatesToShow() {
+        // given
+        let movie = Movie(identifier: 30,
+                          title: "Movie test",
+                          posterPath: nil,
+                          backdropPath: nil,
+                          releaseDate: nil,
+                          genreIdentifiers: [])
+        
+        // when
+        sut.didSelect(movie: movie)
+        
+        // then
+        XCTAssertEqual(detailNavigatorMock.navigateToMovieCalls.count, 1)
+        XCTAssertEqual(detailNavigatorMock.navigateToMovieCalls.first, movie.identifier)
+    }
 }
