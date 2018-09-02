@@ -88,6 +88,7 @@
 		B30F8AB42139B59100E5F8CE /* PushDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F8AB32139B59100E5F8CE /* PushDetailNavigator.swift */; };
 		B3D43CF7213C594400746515 /* FeaturedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D43CF6213C594400746515 /* FeaturedPresenterTests.swift */; };
 		B3D43CF9213C5B9100746515 /* DetailNavigatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D43CF8213C5B9100746515 /* DetailNavigatorMock.swift */; };
+		B3D43CFB213C65BC00746515 /* FeaturedViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D43CFA213C65BC00746515 /* FeaturedViewMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +221,7 @@
 		B30F8AB32139B59100E5F8CE /* PushDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDetailNavigator.swift; sourceTree = "<group>"; };
 		B3D43CF6213C594400746515 /* FeaturedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPresenterTests.swift; sourceTree = "<group>"; };
 		B3D43CF8213C5B9100746515 /* DetailNavigatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigatorMock.swift; sourceTree = "<group>"; };
+		B3D43CFA213C65BC00746515 /* FeaturedViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedViewMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +424,7 @@
 				99506B2F20809F2200F94098 /* Info.plist */,
 				B3D43CF6213C594400746515 /* FeaturedPresenterTests.swift */,
 				B3D43CF8213C5B9100746515 /* DetailNavigatorMock.swift */,
+				B3D43CFA213C65BC00746515 /* FeaturedViewMock.swift */,
 			);
 			path = TMDbCoreTests;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 			files = (
 				B3D43CF7213C594400746515 /* FeaturedPresenterTests.swift in Sources */,
 				B3D43CF9213C5B9100746515 /* DetailNavigatorMock.swift in Sources */,
+				B3D43CFB213C65BC00746515 /* FeaturedViewMock.swift in Sources */,
 				99506B2E20809F2200F94098 /* TMDbCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

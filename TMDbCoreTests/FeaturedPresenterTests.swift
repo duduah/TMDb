@@ -15,11 +15,13 @@ class FeaturedPresenterTests: XCTestCase {
     
     // Collaborators
     private let detailNavigatorMock = DetailNavigatorMock()
+    private let featuredViewMock = FeaturedViewMock()
     
     override func setUp() {
         super.setUp()
         
         sut = FeaturedPresenter(detailNavigator: detailNavigatorMock)
+        sut.view = featuredViewMock
     }
     
     // Tests names = given + when + then
@@ -30,6 +32,18 @@ class FeaturedPresenterTests: XCTestCase {
      when = didSelectShow
      then = navigatesToShow
      */
+    
+    func test_didLoad_setHeaderTitles() {
+        // when
+        sut.didLoad()
+        
+        // then
+        XCTAssertEqual(featuredViewMock.setShowsHeaderTitleCalls.count, 1)
+        XCTAssertEqual(featuredViewMock.setShowsHeaderTitleCalls.first, NSLocalizedString("ON TV", comment: ""))
+        XCTAssertEqual(featuredViewMock.setMoviesHeaderTitleCalls.count, 1)
+        XCTAssertEqual(featuredViewMock.setMoviesHeaderTitleCalls.first, NSLocalizedString("IN THEATERS", comment: ""))
+    }
+    
     func testShow_didSelectShow_navigatesToShow() {
         // given
         let show = Show(identifier: 42,
