@@ -30,12 +30,26 @@ final class DetailAssembly {
 }
 
 extension DetailAssembly: DetailViewControllerProvider {
+    // FIXME: Temporary
+    private class DummyDetailPresenter: DetailPresenter {
+        var view: DetailView?
+        
+        func didLoad() {}
+        
+        func didSelect(item: PosterStripItem) {}
+        
+        
+    }
     func movieViewController(withIdentifier identifier: Int64) -> UIViewController {
-        // TODO: implement
+        return DetailViewController(presenter: DummyDetailPresenter(),
+                                    headerPresenter: detailHeaderPresenter(),
+                                    posterStripPresenter: posterStripPresenter())
     }
     
     func showViewController(withIdentifier identifier: Int64) -> UIViewController {
-        // TODO: implement
+        return DetailViewController(presenter: DummyDetailPresenter(),
+                                    headerPresenter: detailHeaderPresenter(),
+                                    posterStripPresenter: posterStripPresenter())
     }
     
     
