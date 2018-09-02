@@ -86,6 +86,8 @@
 		B30F8AAE2130666000E5F8CE /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F8AAD2130666000E5F8CE /* AppAssembly.swift */; };
 		B30F8AB22139B42700E5F8CE /* DetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F8AB12139B42700E5F8CE /* DetailNavigator.swift */; };
 		B30F8AB42139B59100E5F8CE /* PushDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F8AB32139B59100E5F8CE /* PushDetailNavigator.swift */; };
+		B3D43CF7213C594400746515 /* FeaturedPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D43CF6213C594400746515 /* FeaturedPresenterTests.swift */; };
+		B3D43CF9213C5B9100746515 /* DetailNavigatorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D43CF8213C5B9100746515 /* DetailNavigatorMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +218,8 @@
 		B30F8AAD2130666000E5F8CE /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		B30F8AB12139B42700E5F8CE /* DetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigator.swift; sourceTree = "<group>"; };
 		B30F8AB32139B59100E5F8CE /* PushDetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDetailNavigator.swift; sourceTree = "<group>"; };
+		B3D43CF6213C594400746515 /* FeaturedPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPresenterTests.swift; sourceTree = "<group>"; };
+		B3D43CF8213C5B9100746515 /* DetailNavigatorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigatorMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +420,8 @@
 			children = (
 				99506B2D20809F2200F94098 /* TMDbCoreTests.swift */,
 				99506B2F20809F2200F94098 /* Info.plist */,
+				B3D43CF6213C594400746515 /* FeaturedPresenterTests.swift */,
+				B3D43CF8213C5B9100746515 /* DetailNavigatorMock.swift */,
 			);
 			path = TMDbCoreTests;
 			sourceTree = "<group>";
@@ -788,6 +794,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D43CF7213C594400746515 /* FeaturedPresenterTests.swift in Sources */,
+				B3D43CF9213C5B9100746515 /* DetailNavigatorMock.swift in Sources */,
 				99506B2E20809F2200F94098 /* TMDbCoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
