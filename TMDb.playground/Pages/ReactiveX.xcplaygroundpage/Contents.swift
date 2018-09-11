@@ -2,6 +2,9 @@
 
 @testable import TMDbCore
 import RxSwift
+import PlaygroundSupport
+
+PlaygroundPage.current.needsIndefiniteExecution
 
 enum APIError: Error {
     case invalidKey
@@ -24,8 +27,20 @@ let helloWorld = Observable<String>.create { observer in
     return Disposables.create()
 }
 
+
+let promise = Observable<String>.create { observer in
+    observer.onNext("One, two, three, four and...")
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        observer.onNext("Five seconds later")
+        observer.onCompleted()
+    }
+    
+    return Disposables.create()
+}
+
 // Subscribing to observable. Sustituir some por cualquiera de las otras variables de tipo Observable y ver qué imprime:
-some.subscribe { event in
+promise.subscribe { event in
     switch event {
     case .next(let value):
         print("next(\(value))")
