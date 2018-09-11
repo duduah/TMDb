@@ -1,6 +1,6 @@
 //: [Previous](@previous)
 
-import TMDbCore
+@testable import TMDbCore
 import RxSwift
 
 enum APIError: Error {
@@ -22,4 +22,16 @@ let helloWorld = Observable<String>.create { observer in
     observer.onCompleted()
     
     return Disposables.create()
+}
+
+// Subscribing to observable. Sustituir some por cualquiera de las otras variables de tipo Observable y ver qué imprime:
+some.subscribe { event in
+    switch event {
+    case .next(let value):
+        print("next(\(value))")
+    case .error(let error):
+        print("error(\(error))")
+    case .completed:
+        print("completed")
+    }
 }
