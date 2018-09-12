@@ -15,7 +15,11 @@ struct RandomUserResponse: Decodable {
         }
         
         struct Picture: Decodable {
-            let large: URL
+            let imageURL: URL
+            
+            private enum CodingKeys: String, CodingKey {
+                case imageURL = "large"
+            }
         }
         
         let name: Name
@@ -59,14 +63,14 @@ func getRandomUserImage(completion: @escaping (UIImage?, Error?) -> Void) {
             return
         }
         
-        getImage(for: response.results[0].picture.large, completion: completion)
+        getImage(for: response.results[0].picture.imageURL, completion: completion)
     }
 }
 
 getRandomUserImage { (image, error) in
     if let image = image {
         let caca = image
-        print(image)
+        print(caca)
     } else if let error = error {
         print(error)
     }
