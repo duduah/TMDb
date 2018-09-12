@@ -36,16 +36,12 @@ let session = URLSession(configuration: .default)
 let decoder = JSONDecoder()
 
 let randomUserImage = session.rx.data(request: URLRequest(url: randomUserApiUrl))
-    .map { data -> RandomUserResponse in
-        try decoder.decode(RandomUserResponse.self, from: data)
-    }
+    .map { try decoder.decode(RandomUserResponse.self, from: $0) }
     .flatMap { response -> Observable<Data> in
         let request = URLRequest(url: response.results[0].picture.imageURL)
         return session.rx.data(request: request)
     }
-    .map { data -> UIImage in
-        UIImage(data: data) ?? UIImage()
-    }
+    .map { UIImage(data: $0) ?? UIImage() }
 
 let disposable = randomUserImage.subscribe(onNext: { image in
     let jorl = image
