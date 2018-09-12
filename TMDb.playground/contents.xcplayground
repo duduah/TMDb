@@ -7,5 +7,6 @@
         <page name='Card Presentation'/>
         <page name='Featured Presentation'/>
         <page name='Fake Detail Presentation'/>
+        <page name='ReactiveX'/>
     </pages>
 </playground>
