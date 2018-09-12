@@ -32,49 +32,45 @@ let randomUserApiUrl = URL(string: "https://randomuser.me/api")!
 let session = URLSession(configuration: .default)
 let decoder = JSONDecoder()
 
-func getUserRandomResponse(completion: @escaping (RandomUserResponse?, Error?) -> Void) {
-    // Peticiones a esa sesión
-    let task = session.dataTask(with: randomUserApiUrl) { (data, response, error) in
-        if let data = data,
-            let results = try? decoder.decode(RandomUserResponse.self, from: data) {
-            completion(results, nil)
-        } else {
-            completion(nil, error)
-        }
-    }
-    
-    task.resume()
-}
-
-func getImage(for url: URL, completion: @escaping (UIImage?, Error?) -> Void) {
-    let task = session.dataTask(with: randomUserApiUrl) { (data, response, error) in
-        if let data = data, let image = UIImage(data: data) {
-            completion(image, nil)
-        } else {
-            completion(nil, error)
-        }
-    }
-}
-
-func getRandomUserImage(completion: @escaping (UIImage?, Error?) -> Void) {
-    getUserRandomResponse { (response, error) in
-        guard let response = response else {
-            completion(nil, error)
-            return
+func data(with url: URL) -> Observable<Data> {
+    return Observable.create { observer in
+        let task = session.dataTask(with: randomUserApiUrl) { data, response, error in
+            if let error = error {
+                observer.onError(error)
+            } else {
+                observer.onNext(data ?? Data())
+                observer.onCompleted()
+            }
         }
         
-        getImage(for: response.results[0].picture.imageURL, completion: completion)
+        task.resume()
+        return Disposables.create {
+            task.cancel()
+        }
     }
 }
 
-getRandomUserImage { (image, error) in
-    if let image = image {
-        let caca = image
-        print(caca)
-    } else if let error = error {
-        print(error)
+let randomUserImage = data(with: randomUserApiUrl)
+    .map { data -> RandomUserResponse in
+        try decoder.decode(RandomUserResponse.self, from: data)
     }
-}
+    .flatMap { response -> Observable<Data> in
+        data(with: response.results[0].picture.imageURL)
+    }
+    .map { data -> UIImage in
+        UIImage(data: data) ?? UIImage()
+    }
+
+let disposable = randomUserImage.subscribe(onNext: { image in
+    let pleaseWork = image
+}, onError: { error in
+    let caca = error
+    print("error: \(caca)")
+})
+
+// disposable.dispose() // al ejecutar esto se ejecuta lo indicado en data(with url), en return Disposables.create{...}
+
+
 
 
 
